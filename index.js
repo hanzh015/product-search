@@ -6,6 +6,7 @@ const findSimilar = require('./src/similarAPI');
 const express = require('express')
 const app = express()
 
+const html = __dirname + '/dist/frontend/';
 app.get('/products',(req,res)=>{
     /*
     if(!req.query.name){
@@ -71,9 +72,10 @@ app.get('/similar',(req,res)=>{
     }
 });
 
-app.get('/',(req,res)=>{
-	return res.sendFile("./dist/frontend/index.html",{ root: __dirname });
-})
+app.use(express.static(html));
+app.use(function(req, res) {
+    res.sendFile(html + 'index.html');
+  })
 
 const port = process.env.PORT || 1337;
 app.listen(port);
