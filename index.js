@@ -2,6 +2,7 @@
 //const urlparser = require('url')
 const findProducts = require('./src/findingAPI');
 const findDetails = require('./src/shoppingAPI');
+const findSimilar = require('./src/similarAPI');
 const express = require('express')
 const app = express()
 
@@ -55,6 +56,24 @@ app.get('/shopping',(req,res)=>{
         })
     }
 });
+
+app.get('/similar',(req,res)=>{
+    if(!req.query.ItemId){
+        return res.send({"error":"please specify item value"});
+    }
+    else{
+        findSimilar(req.query,(error,body)=>{
+            if(error){res.send({error})}
+            else{
+                res.send(body);
+            }
+        })
+    }
+});
+
+app.get('/',(req,res)=>{
+	return res.sendFile("./dist/frontend/index.html",{ root: __dirname });
+})
 
 const port = process.env.PORT || 1337;
 app.listen(port);
