@@ -1,16 +1,23 @@
 ---
-topic: Node.js Hello World
+topic: Node.js Product Search
 languages:
   - javascript
 products:
-  - Azure App Service
-  - Azure Web Apps
+  - Google Cloud Platform
 ---
 
-# Node.js Hello World
+# Node.js Product Search
 
-This sample demonstrates a tiny Hello World node.js app for [App Service Web App](https://docs.microsoft.com/azure/app-service-web).
+This sample demonstrates a tiny node.js app for searching ebay products by calling
+
+`ebay finding api` (https://developer.ebay.com/devzone/finding/concepts/findingapiguide.html)
+
+`ebay shopping api` (https://developer.ebay.com/devzone/shopping/docs/callref/index.html)
+
+`eBay Merchandising API` (https://developer.ebay.com/devzone/merchandising/docs/CallRef/index.html)
+
+The front end page was developed by Angular7.
 
 # Contributing
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+Han Zhang (hanzh015@gmail.com)
